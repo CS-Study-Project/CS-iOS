@@ -40,7 +40,7 @@ private extension TabBarController {
         
         let teamVC = UINavigationController(rootViewController: ViewController())
         let studyVC = UINavigationController(rootViewController: ViewController())
-        let homeVC = UINavigationController(rootViewController: ViewController())
+        let homeVC = UINavigationController(rootViewController: HomeViewController())
         let csVC = UINavigationController(rootViewController: ViewController())
         let myPageVC = UINavigationController(rootViewController: ViewController())
         
@@ -64,10 +64,10 @@ private extension TabBarController {
     
     func setTabBarUI() {
         UITabBar.clearShadow()
-        tabBar.backgroundColor = UIColor.gray500
-        tabBar.tintColor = UIColor.white000
+        tabBar.backgroundColor = UIColor.white000
+//        tabBar.tintColor = UIColor.white000
         tabBar.layer.masksToBounds = false
-        tabBar.layer.shadowColor = UIColor.diamon000.cgColor
+        tabBar.layer.shadowColor = UIColor.gray20.cgColor
         tabBar.layer.shadowOpacity = 1
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         tabBar.layer.shadowRadius = 1
