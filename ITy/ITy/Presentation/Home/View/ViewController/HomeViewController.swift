@@ -20,6 +20,8 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - UI Components
     
+    private let profileView = ProfileView()
+    
     
     // MARK: - Properties
     
@@ -31,7 +33,16 @@ final class HomeViewController: BaseViewController {
         view.backgroundColor = .gray10
     }
     
-    override func setLayout() {}
+    override func setLayout() {
+        view.addSubviews(profileView)
+        
+        profileView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 151 / 812)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 335 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 118 / 812)
+        }
+    }
     
     
 }
