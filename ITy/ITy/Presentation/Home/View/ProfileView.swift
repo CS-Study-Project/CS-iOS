@@ -14,11 +14,52 @@ class ProfileView: BaseView {
     
     // MARK: - UI Components Property
     
-    override func setStyles() {}
+    private let imageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let shareLabel = UILabel()
+    
+    override func setStyles() {
+        backgroundColor = .white000
+        layer.cornerRadius = 16
+        
+        imageView.do {
+            $0.image = ImageLiterals.Home.home_profile
+        }
+        
+        nameLabel.do {
+            $0.text = "허몽구님 반가워요!"
+            $0.textColor = .black000
+            $0.font = .fontGuide(.head4)
+        }
+        
+        shareLabel.do {
+            $0.text = "ITy에서 ?개의 지식을 공유했어요"
+            $0.textColor = .black000
+            $0.font = .fontGuide(.body2_reg)
+        }
+    }
 
     // MARK: - Layout Helper
 
-    override func setLayout() {}
+    override func setLayout() {
+        addSubviews(imageView, nameLabel, shareLabel)
+        
+        imageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 10 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 8 / 375)
+            $0.width.height.equalTo(SizeLiterals.Screen.screenWidth * 83.33 / 375)
+        }
+        
+        nameLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 30 / 812)
+            $0.leading.equalTo(imageView.snp.trailing).offset(SizeLiterals.Screen.screenWidth * 14.33 / 375)
+        }
+        
+        shareLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 9 / 812)
+            $0.leading.equalTo(imageView.snp.trailing).offset(SizeLiterals.Screen.screenWidth * 14.33 / 375)
+        }
+    }
     
     // MARK: - Methods
     

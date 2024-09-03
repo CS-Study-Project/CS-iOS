@@ -20,4 +20,8 @@ enum ImageLiterals {
         static var myPage_on: UIImage { .load(name: "ic_myPage_on").withRenderingMode(.alwaysOriginal) }
         static var myPage_off: UIImage { .load(name: "ic_myPage_off").withRenderingMode(.alwaysOriginal) }
     }
+    
+    enum Home {
+        static var home_profile: UIImage { .load(name: "ic_profile").withRenderingMode(.alwaysOriginal) }
+    }
 }
