@@ -21,6 +21,7 @@ final class HomeViewController: BaseViewController {
     // MARK: - UI Components
     
     private let profileView = ProfileView()
+    private let topicView = TopicView()
     
     
     // MARK: - Properties
@@ -34,13 +35,20 @@ final class HomeViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(profileView)
+        view.addSubviews(profileView, topicView)
         
         profileView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 151 / 812)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 335 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 118 / 812)
+        }
+        
+        topicView.snp.makeConstraints {
+            $0.top.equalTo(profileView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 10 / 812)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 335 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 163 / 812)
         }
     }
     

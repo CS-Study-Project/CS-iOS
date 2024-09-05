@@ -45,7 +45,7 @@ class ProfileView: BaseView {
         addSubviews(imageView, nameLabel, shareLabel)
         
         imageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 10 / 812)
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 18.33 / 812)
             $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 8 / 375)
             $0.width.height.equalTo(SizeLiterals.Screen.screenWidth * 83.33 / 375)
         }

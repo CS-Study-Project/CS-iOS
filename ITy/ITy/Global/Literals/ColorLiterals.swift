@@ -9,6 +9,10 @@ import UIKit
 
 extension UIColor {
     
+    static var blue100: UIColor {
+        return UIColor(hex: "#5085FF")
+    }
+    
     static var gray10: UIColor {
         return UIColor(hex: "#F8F9FA")
     }

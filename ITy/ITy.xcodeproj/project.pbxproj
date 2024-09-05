@@ -13,6 +13,7 @@
 		259B5F922C857F7900434B74 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259B5F912C857F7900434B74 /* ProfileView.swift */; };
 		259B5F942C857F8300434B74 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259B5F932C857F8300434B74 /* HomeViewModel.swift */; };
 		259B5F962C857FC000434B74 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 259B5F952C857FC000434B74 /* RxCocoa */; };
+		25A32B172C892D1500474BC6 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A32B162C892D1500474BC6 /* TopicView.swift */; };
 		25F6667B2C8005480089A454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667A2C8005480089A454 /* AppDelegate.swift */; };
 		25F6667D2C8005480089A454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667C2C8005480089A454 /* SceneDelegate.swift */; };
 		25F6667F2C8005480089A454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667E2C8005480089A454 /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		259B5F8F2C857F6600434B74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		259B5F912C857F7900434B74 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		259B5F932C857F8300434B74 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		25A32B162C892D1500474BC6 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
 		25F666772C8005480089A454 /* ITy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F6667A2C8005480089A454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F6667C2C8005480089A454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				259B5F912C857F7900434B74 /* ProfileView.swift */,
+				25A32B162C892D1500474BC6 /* TopicView.swift */,
 				259B5F8C2C856F2400434B74 /* ViewController */,
 			);
 			path = View;
@@ -451,6 +454,7 @@
 				25F666E92C8031370089A454 /* Observable+.swift in Sources */,
 				25F666C02C800B360089A454 /* TabBarItem.swift in Sources */,
 				25F6667F2C8005480089A454 /* ViewController.swift in Sources */,
+				25A32B172C892D1500474BC6 /* TopicView.swift in Sources */,
 				25F6667B2C8005480089A454 /* AppDelegate.swift in Sources */,
 				25F666E12C8030B50089A454 /* UIColor+.swift in Sources */,
 				25911A0D2C86D04E0029FF09 /* MainViewController.swift in Sources */,
