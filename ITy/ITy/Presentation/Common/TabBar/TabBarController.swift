@@ -40,7 +40,7 @@ private extension TabBarController {
         
         let teamVC = UINavigationController(rootViewController: ViewController())
         let studyVC = UINavigationController(rootViewController: ViewController())
-        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        let homeVC = UINavigationController(rootViewController: MainViewController())
         let csVC = UINavigationController(rootViewController: ViewController())
         let myPageVC = UINavigationController(rootViewController: ViewController())
         

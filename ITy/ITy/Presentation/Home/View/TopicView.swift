@@ -68,10 +68,11 @@ class TopicView: BaseView {
         }
         
     }
+
+    private func setAddTarget() {}
     
     // MARK: - Methods
     
-    private func setAddTarget() {}
     
     // MARK: - @objc Methods
     
