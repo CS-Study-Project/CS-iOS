@@ -24,7 +24,7 @@ final class RankViewController: BaseViewController {
     // MARK: - Properties
     
     override func bindViewModel() {
-        view.backgroundColor = .blue100
+        view.backgroundColor = .gray10
     }
     
     override func setStyles() {
