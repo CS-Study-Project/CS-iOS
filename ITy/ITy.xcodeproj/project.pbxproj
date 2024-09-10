@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		256AD5212C907D1100BEFA55 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5202C907D1100BEFA55 /* NoticeViewController.swift */; };
+		256AD5272C9083DA00BEFA55 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */; };
+		256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5282C9083FA00BEFA55 /* AuthViewController.swift */; };
+		256AD52B2C90840100BEFA55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD52A2C90840100BEFA55 /* AuthView.swift */; };
 		25911A0D2C86D04E0029FF09 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25911A0C2C86D04E0029FF09 /* MainViewController.swift */; };
 		25911A0F2C86D05D0029FF09 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25911A0E2C86D05D0029FF09 /* RankViewController.swift */; };
 		259B5F902C857F6600434B74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259B5F8F2C857F6600434B74 /* HomeViewController.swift */; };
@@ -60,6 +63,9 @@
 
 /* Begin PBXFileReference section */
 		256AD5202C907D1100BEFA55 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		256AD5282C9083FA00BEFA55 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		256AD52A2C90840100BEFA55 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		25911A0C2C86D04E0029FF09 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		25911A0E2C86D05D0029FF09 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		259B5F8F2C857F6600434B74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256AD5222C9082F600BEFA55 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				256AD5252C90834200BEFA55 /* ViewModel */,
+				256AD5242C90834200BEFA55 /* View */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		256AD5232C90833F00BEFA55 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				256AD5282C9083FA00BEFA55 /* AuthViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		256AD5242C90834200BEFA55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				256AD52A2C90840100BEFA55 /* AuthView.swift */,
+				256AD5232C90833F00BEFA55 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		256AD5252C90834200BEFA55 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		259B5F8B2C856F1800434B74 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +245,7 @@
 		25F666A92C8009A00089A454 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				256AD5222C9082F600BEFA55 /* Auth */,
 				259B5F8B2C856F1800434B74 /* Home */,
 				25F6667E2C8005480089A454 /* ViewController.swift */,
 				25F666B32C800A570089A454 /* Common */,
@@ -460,6 +501,7 @@
 				25F666E52C8030F50089A454 /* UIButton+.swift in Sources */,
 				25F666B82C800AD90089A454 /* BaseViewController.swift in Sources */,
 				25F666DB2C8030900089A454 /* NSObject+.swift in Sources */,
+				256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */,
 				25F666E92C8031370089A454 /* Observable+.swift in Sources */,
 				25F666C02C800B360089A454 /* TabBarItem.swift in Sources */,
 				25F6667F2C8005480089A454 /* ViewController.swift in Sources */,
@@ -469,6 +511,7 @@
 				25F666E12C8030B50089A454 /* UIColor+.swift in Sources */,
 				25911A0D2C86D04E0029FF09 /* MainViewController.swift in Sources */,
 				25F666C22C800B670089A454 /* APIService.swift in Sources */,
+				256AD52B2C90840100BEFA55 /* AuthView.swift in Sources */,
 				25F666E32C8030E50089A454 /* UIView+.swift in Sources */,
 				25F666D92C8030780089A454 /* UITextField+.swift in Sources */,
 				259B5F942C857F8300434B74 /* HomeViewModel.swift in Sources */,
@@ -489,6 +532,7 @@
 				25F666AE2C800A100089A454 /* data.swift in Sources */,
 				259B5F922C857F7900434B74 /* ProfileView.swift in Sources */,
 				25F666E72C8031020089A454 /* Encodable+.swift in Sources */,
+				256AD5272C9083DA00BEFA55 /* AuthViewModel.swift in Sources */,
 				25B83C482C8D9A5300F46A88 /* SegmentedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
