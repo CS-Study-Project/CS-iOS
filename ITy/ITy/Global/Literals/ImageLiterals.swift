@@ -23,5 +23,6 @@ enum ImageLiterals {
     
     enum Home {
         static var home_profile: UIImage { .load(name: "ic_profile").withRenderingMode(.alwaysOriginal) }
+        static var home_notice: UIImage { .load(name: "ic_notice").withRenderingMode(.alwaysOriginal) }
     }
 }

@@ -20,9 +20,15 @@ class SegmentedView: BaseView {
     
     lazy var homeButton = UIButton(frame: .zero, primaryAction: moveToHome())
     lazy var rankButton = UIButton(frame: .zero, primaryAction: moveToRank())
+    private var noticeButton = UIButton()
     
     private var selectedIndex: Int = 0
     weak var delegate: MainViewSegmentDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setAddTarget()
+    }
     
     override func setStyles() {
         
@@ -37,12 +43,16 @@ class SegmentedView: BaseView {
             $0.titleLabel?.font = .fontGuide(.head1)
             $0.setTitleColor(.gray30, for: .normal)
         }
+        
+        noticeButton.do {
+            $0.setImage(ImageLiterals.Home.home_notice, for: .normal)
+        }
     }
 
     // MARK: - Layout Helper
 
     override func setLayout() {
-        self.addSubviews(homeButton, rankButton)
+        self.addSubviews(homeButton, rankButton, noticeButton)
         
         homeButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 6 / 812)
@@ -57,9 +67,17 @@ class SegmentedView: BaseView {
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 29 / 812)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 42 / 375)
         }
+        
+        noticeButton.snp.makeConstraints {
+            $0.top.equalTo(rankButton.snp.top).offset(SizeLiterals.Screen.screenHeight * 4 / 812)
+            $0.trailing.equalToSuperview().offset(-SizeLiterals.Screen.screenWidth * 14 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 20 / 812)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 16 / 375)
+        }
     }
     
     private func setAddTarget() {
+        noticeButton.addTarget(self, action: #selector(pushToNoticeViewController), for: .touchUpInside)
     }
     
     // MARK: - Methods
@@ -113,8 +131,10 @@ class SegmentedView: BaseView {
     
     // MARK: - @objc Methods
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    @objc
+    private func pushToNoticeViewController() {
+        print("이거는 ViewModel로 연결 할 기능입니다.")
+        // 추후 ViewModel로 연결
     }
     
     required init?(coder: NSCoder) {
