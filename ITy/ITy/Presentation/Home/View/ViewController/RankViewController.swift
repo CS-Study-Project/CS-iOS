@@ -20,6 +20,7 @@ final class RankViewController: BaseViewController {
     
     // MARK: - UI Components
     
+    private let todayRecommendation = RankView(frame: .zero, titleString: "오늘의 추천 순위예요")
     
     // MARK: - Properties
     
@@ -31,7 +32,17 @@ final class RankViewController: BaseViewController {
         
     }
     
-    override func setLayout() {}
+    override func setLayout() {
+        view.addSubviews(todayRecommendation)
+        
+        todayRecommendation.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 13 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 344 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 170 / 812)
+            
+        }
+    }
     
     
 }
