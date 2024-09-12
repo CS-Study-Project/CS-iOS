@@ -25,4 +25,11 @@ enum ImageLiterals {
         static var home_profile: UIImage { .load(name: "ic_profile").withRenderingMode(.alwaysOriginal) }
         static var home_notice: UIImage { .load(name: "ic_notice").withRenderingMode(.alwaysOriginal) }
     }
+    
+    enum Rank {
+        static var rank_firstPlace: UIImage { .load(name: "ic_firstPlace").withRenderingMode(.alwaysOriginal)}
+        static var rank_secondPlace: UIImage { .load(name: "ic_secondPlace").withRenderingMode(.alwaysOriginal)}
+        static var rank_thirdPlace: UIImage { .load(name: "ic_thirdPlace").withRenderingMode(.alwaysOriginal)}
+
+    }
 }
