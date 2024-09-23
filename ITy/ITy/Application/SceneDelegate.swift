@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let mainViewController = TabBarController()
-        mainViewController.selectedIndex = 2
+        let mainViewController = AuthViewController()
+//        mainViewController.selectedIndex = 2
         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
         sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: mainViewController)
         sceneDelegate.window?.makeKeyAndVisible()

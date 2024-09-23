@@ -21,9 +21,7 @@ final class AuthViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let profileView = ProfileView()
-    private let topicView = TopicView()
-    
+    private let authTitleView = AuthTitleView()
     
     // MARK: - Properties
     
@@ -32,10 +30,18 @@ final class AuthViewController: BaseViewController {
     }
     
     override func setStyles() {
-        view.backgroundColor = .gray10
+        view.backgroundColor = .white000
     }
     
-    override func setLayout() {}
+    override func setLayout() {
+        view.addSubviews(authTitleView)
+        
+        authTitleView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 222 / 812)
+        }
+    }
     
     
 }
