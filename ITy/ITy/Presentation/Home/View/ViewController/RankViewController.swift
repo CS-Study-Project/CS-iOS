@@ -20,7 +20,7 @@ final class RankViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let todayRecommendation = RankView(frame: .zero, titleString: "오늘의 추천 순위예요")
+    private let todayRecommendation = RankView(frame: .zero, titleString: "오늘의 추천순위예요", firstRankName: "허허", secondRankName: "허허", thirdRankName: "허허")
     
     // MARK: - Properties
     

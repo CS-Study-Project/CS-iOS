@@ -19,9 +19,15 @@ class RankView: BaseView {
     private let firstPlace = RankUI(frame: .zero, rankString: "허지영", rankImage: ImageLiterals.Rank.rank_firstPlace)
     
     private let titleString: String
+    private let firstRankName: String
+    private let secondRankName: String
+    private let thirdRankName: String
     
-    init(frame: CGRect, titleString: String) {
+    init(frame: CGRect, titleString: String, firstRankName: String, secondRankName: String, thirdRankName: String) {
         self.titleString = titleString
+        self.firstRankName = firstRankName
+        self.secondRankName = secondRankName
+        self.thirdRankName = thirdRankName
         super.init(frame: frame)
     }
     
@@ -57,6 +63,10 @@ class RankView: BaseView {
     // MARK: - Methods
     
     private func setAddTarget() {}
+    
+    private func setRanking() {
+        
+    }
     
     // MARK: - @objc Methods
 
