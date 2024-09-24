@@ -10,7 +10,7 @@
 		256AD5212C907D1100BEFA55 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5202C907D1100BEFA55 /* NoticeViewController.swift */; };
 		256AD5272C9083DA00BEFA55 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */; };
 		256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5282C9083FA00BEFA55 /* AuthViewController.swift */; };
-		256AD52B2C90840100BEFA55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD52A2C90840100BEFA55 /* AuthView.swift */; };
+		256AD52B2C90840100BEFA55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD52A2C90840100BEFA55 /* LoginView.swift */; };
 		256AD52D2C9271EB00BEFA55 /* RankUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD52C2C9271EB00BEFA55 /* RankUI.swift */; };
 		25911A0D2C86D04E0029FF09 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25911A0C2C86D04E0029FF09 /* MainViewController.swift */; };
 		25911A0F2C86D05D0029FF09 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25911A0E2C86D05D0029FF09 /* RankViewController.swift */; };
@@ -22,6 +22,7 @@
 		25B83C482C8D9A5300F46A88 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B83C472C8D9A5300F46A88 /* SegmentedView.swift */; };
 		25B83C4A2C8DA9DD00F46A88 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B83C492C8DA9DD00F46A88 /* RankView.swift */; };
 		25D2E4FC2CA14F970055A87F /* AuthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E4FB2CA14F970055A87F /* AuthTitleView.swift */; };
+		25D2E4FE2CA156420055A87F /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E4FD2CA156420055A87F /* AuthView.swift */; };
 		25F6667B2C8005480089A454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667A2C8005480089A454 /* AppDelegate.swift */; };
 		25F6667D2C8005480089A454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667C2C8005480089A454 /* SceneDelegate.swift */; };
 		25F6667F2C8005480089A454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667E2C8005480089A454 /* ViewController.swift */; };
@@ -67,7 +68,7 @@
 		256AD5202C907D1100BEFA55 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		256AD5282C9083FA00BEFA55 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		256AD52A2C90840100BEFA55 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		256AD52A2C90840100BEFA55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		256AD52C2C9271EB00BEFA55 /* RankUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankUI.swift; sourceTree = "<group>"; };
 		25911A0C2C86D04E0029FF09 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		25911A0E2C86D05D0029FF09 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		25B83C472C8D9A5300F46A88 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
 		25B83C492C8DA9DD00F46A88 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		25D2E4FB2CA14F970055A87F /* AuthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitleView.swift; sourceTree = "<group>"; };
+		25D2E4FD2CA156420055A87F /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		25F666772C8005480089A454 /* ITy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F6667A2C8005480089A454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F6667C2C8005480089A454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +155,8 @@
 		256AD5242C90834200BEFA55 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				256AD52A2C90840100BEFA55 /* AuthView.swift */,
+				256AD52A2C90840100BEFA55 /* LoginView.swift */,
+				25D2E4FD2CA156420055A87F /* AuthView.swift */,
 				25D2E4FB2CA14F970055A87F /* AuthTitleView.swift */,
 				256AD5232C90833F00BEFA55 /* ViewController */,
 			);
@@ -503,6 +506,7 @@
 				25F666BC2C800B080089A454 /* UIComponets.swift in Sources */,
 				25F666F12C8033200089A454 /* ColorLiterals.swift in Sources */,
 				25F666DF2C8030AC0089A454 /* UITabBar+.swift in Sources */,
+				25D2E4FE2CA156420055A87F /* AuthView.swift in Sources */,
 				25F666BE2C800B2A0089A454 /* TabBarController.swift in Sources */,
 				25F666E52C8030F50089A454 /* UIButton+.swift in Sources */,
 				25F666B82C800AD90089A454 /* BaseViewController.swift in Sources */,
@@ -517,7 +521,7 @@
 				25F666E12C8030B50089A454 /* UIColor+.swift in Sources */,
 				25911A0D2C86D04E0029FF09 /* MainViewController.swift in Sources */,
 				25F666C22C800B670089A454 /* APIService.swift in Sources */,
-				256AD52B2C90840100BEFA55 /* AuthView.swift in Sources */,
+				256AD52B2C90840100BEFA55 /* LoginView.swift in Sources */,
 				25F666E32C8030E50089A454 /* UIView+.swift in Sources */,
 				25F666D92C8030780089A454 /* UITextField+.swift in Sources */,
 				259B5F942C857F8300434B74 /* HomeViewModel.swift in Sources */,

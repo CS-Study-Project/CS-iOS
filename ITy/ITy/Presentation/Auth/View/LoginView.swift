@@ -1,5 +1,5 @@
 //
-//  AuthView.swift
+//  LoginView.swift
 //  ITy
 //
 //  Created by 천성우 on 9/10/24.
@@ -10,7 +10,7 @@ import UIKit
 import Then
 import SnapKit
 
-class AuthView: BaseView {
+class LoginView: BaseView {
     
     // MARK: - UI Components Property
     
@@ -30,6 +30,12 @@ class AuthView: BaseView {
 
     override func setLayout() {
 //        addSubviews()
+        loginLabel.do {
+            $0.text = "먼저 로그인이 필요해요 :)"
+            $0.textColor = .gray30
+            $0.font = .fontGuide(.detail2_reg)
+        }
+        
         
     }
     
