@@ -23,6 +23,7 @@
 		25B83C4A2C8DA9DD00F46A88 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B83C492C8DA9DD00F46A88 /* RankView.swift */; };
 		25D2E4FC2CA14F970055A87F /* AuthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E4FB2CA14F970055A87F /* AuthTitleView.swift */; };
 		25D2E4FE2CA156420055A87F /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E4FD2CA156420055A87F /* AuthView.swift */; };
+		25D2E5002CA3E6510055A87F /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E4FF2CA3E6510055A87F /* UnderLineTextField.swift */; };
 		25F6667B2C8005480089A454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667A2C8005480089A454 /* AppDelegate.swift */; };
 		25F6667D2C8005480089A454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667C2C8005480089A454 /* SceneDelegate.swift */; };
 		25F6667F2C8005480089A454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6667E2C8005480089A454 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		25B83C492C8DA9DD00F46A88 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
 		25D2E4FB2CA14F970055A87F /* AuthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitleView.swift; sourceTree = "<group>"; };
 		25D2E4FD2CA156420055A87F /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		25D2E4FF2CA3E6510055A87F /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		25F666772C8005480089A454 /* ITy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F6667A2C8005480089A454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F6667C2C8005480089A454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			children = (
 				25F666BB2C800B080089A454 /* UIComponets.swift */,
 				256AD52C2C9271EB00BEFA55 /* RankUI.swift */,
+				25D2E4FF2CA3E6510055A87F /* UnderLineTextField.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				25F666B82C800AD90089A454 /* BaseViewController.swift in Sources */,
 				25F666DB2C8030900089A454 /* NSObject+.swift in Sources */,
 				256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */,
+				25D2E5002CA3E6510055A87F /* UnderLineTextField.swift in Sources */,
 				25F666E92C8031370089A454 /* Observable+.swift in Sources */,
 				25F666C02C800B360089A454 /* TabBarItem.swift in Sources */,
 				25F6667F2C8005480089A454 /* ViewController.swift in Sources */,
