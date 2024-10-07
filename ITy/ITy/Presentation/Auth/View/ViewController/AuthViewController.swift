@@ -22,6 +22,8 @@ final class AuthViewController: BaseViewController {
     // MARK: - UI Components
     
     private let authTitleView = AuthTitleView()
+    private let loginView = LoginView()
+    private let authView = AuthView()
     
     // MARK: - Properties
     
@@ -34,10 +36,22 @@ final class AuthViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(authTitleView)
+        view.addSubviews(authTitleView, loginView, authView)
         
         authTitleView.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 222 / 812)
+        }
+        
+        loginView.snp.makeConstraints {
+            $0.top.equalTo(authTitleView.snp.bottom)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 334 / 812)
+        }
+        
+        authView.snp.makeConstraints {
+            $0.top.equalTo(loginView.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 222 / 812)
         }
