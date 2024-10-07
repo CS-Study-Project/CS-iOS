@@ -30,6 +30,11 @@ enum ImageLiterals {
         static var rank_firstPlace: UIImage { .load(name: "ic_firstPlace").withRenderingMode(.alwaysOriginal)}
         static var rank_secondPlace: UIImage { .load(name: "ic_secondPlace").withRenderingMode(.alwaysOriginal)}
         static var rank_thirdPlace: UIImage { .load(name: "ic_thirdPlace").withRenderingMode(.alwaysOriginal)}
+    }
+    
+    enum auth {
+        static var kakaoLogin_btn: UIImage { .load(name: "btn_kakaologin").withRenderingMode(.alwaysOriginal)}
+        static var appleLogin_btn: UIImage { .load(name: "btn_applelogin").withRenderingMode(.alwaysOriginal)}
 
     }
 }
