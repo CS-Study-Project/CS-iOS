@@ -16,8 +16,10 @@ class RankView: BaseView {
     // MARK: - UI Components Property
     
     private let titleLabel = UILabel()
-    private let firstPlace = RankUI(frame: .zero, rankString: "허지영", rankImage: ImageLiterals.Rank.rank_firstPlace)
-    
+    private let firstPlace = RankUI(frame: .zero, rankImage: ImageLiterals.Rank.rank_firstPlace)
+    private let secondPlace = RankUI(frame: .zero, rankImage: ImageLiterals.Rank.rank_secondPlace)
+    private let thirdPlace = RankUI(frame: .zero, rankImage: ImageLiterals.Rank.rank_thirdPlace)
+
     private let titleString: String
     private let firstRankName: String
     private let secondRankName: String
@@ -29,6 +31,7 @@ class RankView: BaseView {
         self.secondRankName = secondRankName
         self.thirdRankName = thirdRankName
         super.init(frame: frame)
+        self.setRanking()
     }
     
     override func setStyles() {
@@ -45,7 +48,7 @@ class RankView: BaseView {
     // MARK: - Layout Helper
 
     override func setLayout() {
-        addSubviews(titleLabel, firstPlace)
+        addSubviews(titleLabel, firstPlace, secondPlace, thirdPlace)
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 12 / 812)
@@ -58,14 +61,28 @@ class RankView: BaseView {
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 33 / 812)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 93 / 375)
         }
+        
+        secondPlace.snp.makeConstraints {
+            $0.top.equalTo(firstPlace.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 9 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 33 / 812)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 93 / 375)
+        }
+        
+        thirdPlace.snp.makeConstraints {
+            $0.top.equalTo(secondPlace.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 9 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 33 / 812)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 93 / 375)
+        }
     }
     
     // MARK: - Methods
-    
-    private func setAddTarget() {}
-    
-    private func setRanking() {
         
+    private func setRanking() {
+        firstPlace.setRankLabel(rankString: firstRankName)
+        secondPlace.setRankLabel(rankString: secondRankName)
+        thirdPlace.setRankLabel(rankString: thirdRankName)
     }
     
     // MARK: - @objc Methods

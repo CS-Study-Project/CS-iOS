@@ -17,11 +17,8 @@ class RankUI: BaseView {
     
     private let rankPlace = UIImageView()
     private let rankLabel = UILabel()
-    
-    private let rankString: String
-    
-    init(frame: CGRect, rankString: String, rankImage: UIImage) {
-        self.rankString = rankString
+        
+    init(frame: CGRect, rankImage: UIImage) {
         rankPlace.image = rankImage
         super.init(frame: frame)
     }
@@ -29,7 +26,6 @@ class RankUI: BaseView {
     override func setStyles() {
         
         rankLabel.do {
-            $0.text = rankString
             $0.font = .fontGuide(.head3)
             $0.textColor = .black000
         }
@@ -55,7 +51,9 @@ class RankUI: BaseView {
     
     // MARK: - Methods
     
-    private func setAddTarget() {}
+    func setRankLabel(rankString: String) {
+        rankLabel.text = rankString
+    }
     
     // MARK: - @objc Methods
 

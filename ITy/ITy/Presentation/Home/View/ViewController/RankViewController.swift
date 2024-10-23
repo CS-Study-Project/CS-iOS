@@ -21,6 +21,8 @@ final class RankViewController: BaseViewController {
     // MARK: - UI Components
     
     private let todayRecommendation = RankView(frame: .zero, titleString: "오늘의 추천순위예요", firstRankName: "허허", secondRankName: "허허", thirdRankName: "허허")
+    private let teamProject = RankView(frame: .zero, titleString: "찜이 가장 많은 팀 프로젝트예요", firstRankName: "허몽구키우기", secondRankName: "허몽구키우기", thirdRankName: "허몽구키우기")
+    private let csUser = RankView(frame: .zero, titleString: "찜이 가장 많은 팀 프로젝트예요", firstRankName: "허몽구키우기", secondRankName: "허몽구키우기", thirdRankName: "허몽구키우기")
     
     // MARK: - Properties
     
@@ -33,14 +35,27 @@ final class RankViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(todayRecommendation)
+        view.addSubviews(todayRecommendation, teamProject, csUser)
         
         todayRecommendation.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 13 / 812)
             $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 344 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 170 / 812)
-            
+        }
+        
+        teamProject.snp.makeConstraints {
+            $0.top.equalTo(todayRecommendation.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 26 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 344 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 170 / 812)
+        }
+        
+        csUser.snp.makeConstraints {
+            $0.top.equalTo(teamProject.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 26 / 812)
+            $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 15 / 375)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 344 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 170 / 812)
         }
     }
     
