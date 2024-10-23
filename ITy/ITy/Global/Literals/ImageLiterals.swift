@@ -35,6 +35,9 @@ enum ImageLiterals {
     enum auth {
         static var kakaoLogin_btn: UIImage { .load(name: "btn_kakaologin").withRenderingMode(.alwaysOriginal)}
         static var appleLogin_btn: UIImage { .load(name: "btn_applelogin").withRenderingMode(.alwaysOriginal)}
-
+    }
+    
+    enum navigation {
+        static var navigation_back: UIImage { .load(name: "ic_navigation_back").withRenderingMode(.alwaysOriginal)}
     }
 }
