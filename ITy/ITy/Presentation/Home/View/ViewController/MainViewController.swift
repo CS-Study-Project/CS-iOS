@@ -21,23 +21,43 @@ final class MainViewController: BaseViewController {
     // MARK: - UI Components
     
     private let segmentedView = SegmentedView()
-    private let homeViewController = HomeViewController()
-    private let rankViewController = RankViewController()
+    private let homeViewController: HomeViewController
+    private let rankViewController: RankViewController
     private lazy var viewControllers: [UIViewController] = [homeViewController, rankViewController]
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private var currentPage: UIViewController!
     
+    // MARK: - Initializer
     
+    override init(nibName: String?, bundle: Bundle?) {
+        homeViewController = HomeViewController(viewModel: viewModel)
+        rankViewController = RankViewController(viewModel: viewModel)
+
+        super.init(nibName: nibName, bundle: bundle)
+    }
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setPage()
     }
     
-    
     // MARK: - Properties
     
     override func bindViewModel() {
+        segmentedView.noticeButton.rx.tap
+            .bind { [weak self] in
+                guard let self else { return }
+                self.viewModel.inputs.didTapNoticeButton()
+            }
+            .disposed(by: disposeBag)
         
+        viewModel.outputs.pushPage
+            .bind(onNext: { [weak self] switchPage in
+                if switchPage {
+                    self?.pushToNoticeViewController()
+                }
+            })
     }
     
     override func setStyles() {
@@ -77,6 +97,17 @@ final class MainViewController: BaseViewController {
         }
     }
     
+    @objc
+    private func pushToNoticeViewController() {
+        let pushVC = NoticeViewController(viewModel: viewModel)
+        pushVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pushVC, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 

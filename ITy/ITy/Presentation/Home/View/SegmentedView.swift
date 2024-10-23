@@ -20,14 +20,13 @@ class SegmentedView: BaseView {
     
     lazy var homeButton = UIButton(frame: .zero, primaryAction: moveToHome())
     lazy var rankButton = UIButton(frame: .zero, primaryAction: moveToRank())
-    private var noticeButton = UIButton()
+    var noticeButton = UIButton()
     
     private var selectedIndex: Int = 0
     weak var delegate: MainViewSegmentDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setAddTarget()
     }
     
     override func setStyles() {
@@ -74,10 +73,6 @@ class SegmentedView: BaseView {
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 20 / 812)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 16 / 375)
         }
-    }
-    
-    private func setAddTarget() {
-        noticeButton.addTarget(self, action: #selector(pushToNoticeViewController), for: .touchUpInside)
     }
     
     // MARK: - Methods
@@ -130,12 +125,6 @@ class SegmentedView: BaseView {
     }
     
     // MARK: - @objc Methods
-    
-    @objc
-    private func pushToNoticeViewController() {
-        print("이거는 ViewModel로 연결 할 기능입니다.")
-        // 추후 ViewModel로 연결
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

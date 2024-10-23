@@ -11,10 +11,12 @@ import RxCocoa
 import RxSwift
 
 protocol HomeViewModelInput {
+    func didTapNoticeButton()
+    func didDismissNoticeVC()
 }
 
 protocol HomeViewModelOutput {
-
+    var pushPage: BehaviorRelay<Bool> { get }
 }
 
 protocol HomeViewModelType {
@@ -24,10 +26,20 @@ protocol HomeViewModelType {
 
 final class HomeViewModel: HomeViewModelInput, HomeViewModelOutput, HomeViewModelType {
     
+    var pushPage: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+
     var inputs: HomeViewModelInput { return self }
     var outputs: HomeViewModelOutput { return self }
     
     init() {}
+    
+    func didTapNoticeButton() {
+        pushPage.accept(true)
+    }
+    
+    func didDismissNoticeVC() {
+        pushPage.accept(false)
+    }
 }
 
 

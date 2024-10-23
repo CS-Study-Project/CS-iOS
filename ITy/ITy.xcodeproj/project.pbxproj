@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2553F3A42CC8DD1C0092CA01 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553F3A32CC8DD1C0092CA01 /* CustomNavigationView.swift */; };
 		256AD5212C907D1100BEFA55 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5202C907D1100BEFA55 /* NoticeViewController.swift */; };
 		256AD5272C9083DA00BEFA55 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */; };
 		256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256AD5282C9083FA00BEFA55 /* AuthViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2553F3A32CC8DD1C0092CA01 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		256AD5202C907D1100BEFA55 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		256AD5262C9083DA00BEFA55 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		256AD5282C9083FA00BEFA55 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				25F666BB2C800B080089A454 /* UIComponets.swift */,
 				256AD52C2C9271EB00BEFA55 /* RankUI.swift */,
 				25D2E4FF2CA3E6510055A87F /* UnderLineTextField.swift */,
+				2553F3A32CC8DD1C0092CA01 /* CustomNavigationView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				25F666E52C8030F50089A454 /* UIButton+.swift in Sources */,
 				25F666B82C800AD90089A454 /* BaseViewController.swift in Sources */,
 				25F666DB2C8030900089A454 /* NSObject+.swift in Sources */,
+				2553F3A42CC8DD1C0092CA01 /* CustomNavigationView.swift in Sources */,
 				256AD5292C9083FA00BEFA55 /* AuthViewController.swift in Sources */,
 				25D2E5002CA3E6510055A87F /* UnderLineTextField.swift in Sources */,
 				25F666E92C8031370089A454 /* Observable+.swift in Sources */,

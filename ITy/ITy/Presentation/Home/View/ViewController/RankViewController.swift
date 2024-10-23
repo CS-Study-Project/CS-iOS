@@ -15,7 +15,7 @@ import RxCocoa
 final class RankViewController: BaseViewController {
     
     
-    private let viewModel = HomeViewModel()
+    private let viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
     
     // MARK: - UI Components
@@ -25,6 +25,11 @@ final class RankViewController: BaseViewController {
     private let csUser = RankView(frame: .zero, titleString: "찜이 가장 많은 팀 프로젝트예요", firstRankName: "허몽구키우기", secondRankName: "허몽구키우기", thirdRankName: "허몽구키우기")
     
     // MARK: - Properties
+    
+    init(viewModel: HomeViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
     
     override func bindViewModel() {
         view.backgroundColor = .gray10
@@ -59,5 +64,7 @@ final class RankViewController: BaseViewController {
         }
     }
     
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -15,7 +15,7 @@ import RxCocoa
 final class HomeViewController: BaseViewController {
     
     
-    private let viewModel = HomeViewModel()
+    private let viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
     
     // MARK: - UI Components
@@ -23,6 +23,10 @@ final class HomeViewController: BaseViewController {
     private let profileView = ProfileView()
     private let topicView = TopicView()
     
+    init(viewModel: HomeViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
     
     // MARK: - Properties
     
@@ -52,7 +56,9 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 
