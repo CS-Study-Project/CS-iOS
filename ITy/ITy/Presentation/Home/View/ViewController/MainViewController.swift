@@ -75,7 +75,7 @@ final class MainViewController: BaseViewController {
         segmentedView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(51)
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 70 / 812)
         }
         
         pageViewController.view.snp.makeConstraints {
@@ -116,10 +116,8 @@ extension MainViewController: MainViewSegmentDelegate {
         switch index {
         case 0:
             switchPage(difference: 1)
-            print("이건 movePage안의 \(index)")
         case 1:
             switchPage(difference: -1)
-            print("이건 movePage안의 \(index)")
         default:
             break
         }
@@ -130,10 +128,8 @@ extension MainViewController: MainViewSegmentDelegate {
         switch difference {
         case 1:
             pageViewController.setViewControllers([viewControllers[page + difference]], direction: .forward, animated: true)
-            print("\(difference)이건 switchPage 안에서")
         case -1:
             pageViewController.setViewControllers([viewControllers[page + difference]], direction: .reverse, animated: true)
-            print("\(difference)이건 switchPage 안에서")
         default:
             break
         }

@@ -77,8 +77,6 @@ class SegmentedView: BaseView {
     
     // MARK: - Methods
     
-    
-    // index가 0일 땐 home, index가 1일 땐 rank
     func updateButton(index: Int) {
         switch index {
         case 0:
