@@ -13,6 +13,10 @@ extension UIColor {
         return UIColor(hex: "#5085FF")
     }
     
+    static var gray0: UIColor {
+        return UIColor(hex: "#D9D9D9")
+    }
+    
     static var gray10: UIColor {
         return UIColor(hex: "#F8F9FA")
     }
