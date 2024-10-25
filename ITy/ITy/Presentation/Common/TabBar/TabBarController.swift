@@ -18,7 +18,9 @@ final class TabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
     }
 
     override func viewDidLoad() {
@@ -26,12 +28,8 @@ final class TabBarController: UITabBarController {
         setTabBarItems()
         setTabBarUI()
         setTabBarHeight()
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        tabBar.frame.size.height = self.tabBarHeight + getSafeAreaBottomHeight()
-//    }
 }
 
 private extension TabBarController {
@@ -41,7 +39,7 @@ private extension TabBarController {
         let teamVC = UINavigationController(rootViewController: ViewController())
         let studyVC = UINavigationController(rootViewController: ViewController())
         let homeVC = UINavigationController(rootViewController: MainViewController())
-        let csVC = UINavigationController(rootViewController: ViewController())
+        let csVC = UINavigationController(rootViewController: ComputerscienceViewController())
         let myPageVC = UINavigationController(rootViewController: ViewController())
         
         tabsItem = [
@@ -65,7 +63,6 @@ private extension TabBarController {
     func setTabBarUI() {
         UITabBar.clearShadow()
         tabBar.backgroundColor = UIColor.white000
-//        tabBar.tintColor = UIColor.white000
         tabBar.layer.masksToBounds = false
         tabBar.layer.shadowColor = UIColor.gray20.cgColor
         tabBar.layer.shadowOpacity = 1

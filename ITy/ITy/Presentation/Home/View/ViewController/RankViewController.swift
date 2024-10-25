@@ -26,9 +26,16 @@ final class RankViewController: BaseViewController {
     
     // MARK: - Properties
     
+    override var isNavigationBarHidden: Bool { true }
+    
     init(viewModel: HomeViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func bindViewModel() {

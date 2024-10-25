@@ -16,6 +16,8 @@ class BaseViewController: UIViewController {
     private lazy var viewControllerName = self.className
     private var disposeBag = DisposeBag()
     
+    var isNavigationBarHidden: Bool { false }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
@@ -23,6 +25,20 @@ class BaseViewController: UIViewController {
         setLayout()
         setDelegates()
         setRegister()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isNavigationBarHidden, let navigationController = navigationController {
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
+    }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isNavigationBarHidden, let navigationController = navigationController {
+            navigationController.setNavigationBarHidden(false, animated: false)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

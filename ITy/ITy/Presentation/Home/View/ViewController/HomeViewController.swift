@@ -24,12 +24,20 @@ final class HomeViewController: BaseViewController {
     private let topicView = TopicView()
     private let checkView = CheckView()
     
+    override var isNavigationBarHidden: Bool { true }
+
     init(viewModel: HomeViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     // MARK: - Properties
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     
     override func bindViewModel() {
         

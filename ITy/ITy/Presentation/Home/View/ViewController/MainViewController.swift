@@ -20,13 +20,15 @@ final class MainViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let segmentedView = SegmentedView()
+    private let segmentedView = MainSegmentedView()
     private let homeViewController: HomeViewController
     private let rankViewController: RankViewController
     private lazy var viewControllers: [UIViewController] = [homeViewController, rankViewController]
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private var currentPage: UIViewController!
     
+    override var isNavigationBarHidden: Bool { true }
+
     // MARK: - Initializer
     
     override init(nibName: String?, bundle: Bundle?) {
@@ -40,6 +42,7 @@ final class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPage()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - Properties
@@ -65,6 +68,11 @@ final class MainViewController: BaseViewController {
         
         pageViewController.do {
             $0.didMove(toParent: self)
+        }
+        
+        viewControllers.do {
+            $0[0].navigationController?.setNavigationBarHidden(true, animated: false)
+            $0[1].navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
     
