@@ -12,7 +12,6 @@ import SnapKit
 
 final class CustomCell: UICollectionViewCell {
     
-    // 셀 안에 필요한 UI 컴포넌트가 있을 경우 추가
     private let squareView = UIView()
 
     override init(frame: CGRect) {
