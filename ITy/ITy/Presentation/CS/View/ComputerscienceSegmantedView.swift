@@ -1,8 +1,8 @@
 //
-//  SegmentedView.swift
+//  ComputerscienceSegmantedView.swift
 //  ITy
 //
-//  Created by 천성우 on 9/8/24.
+//  Created by 천성우 on 10/25/24.
 //
 
 import UIKit
@@ -10,20 +10,20 @@ import UIKit
 import Then
 import SnapKit
 
-protocol MainViewSegmentDelegate: AnyObject {
+protocol ComputerscienceViewSegmentDelegate: AnyObject {
     func movePage(to index: Int)
 }
 
-class SegmentedView: BaseView {
+class ComputerscienceSegmantedView: BaseView {
     
     // MARK: - UI Components Property
     
-    lazy var homeButton = UIButton(frame: .zero, primaryAction: moveToHome())
-    lazy var rankButton = UIButton(frame: .zero, primaryAction: moveToRank())
+    lazy var TopicButton = UIButton(frame: .zero, primaryAction: moveToTopic())
+    lazy var AnswerButton = UIButton(frame: .zero, primaryAction: moveToAnswer())
     var noticeButton = UIButton()
     
     private var selectedIndex: Int = 0
-    weak var delegate: MainViewSegmentDelegate?
+    weak var delegate: ComputerscienceViewSegmentDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,14 +31,14 @@ class SegmentedView: BaseView {
     
     override func setStyles() {
         
-        homeButton.do {
-            $0.setTitle("홈", for: .normal)
+        TopicButton.do {
+            $0.setTitle("주제", for: .normal)
             $0.titleLabel?.font = .fontGuide(.head1)
             $0.setTitleColor(.black000, for: .normal)
         }
         
-        rankButton.do {
-            $0.setTitle("랭킹", for: .normal)
+        AnswerButton.do {
+            $0.setTitle("답변", for: .normal)
             $0.titleLabel?.font = .fontGuide(.head1)
             $0.setTitleColor(.gray30, for: .normal)
         }
@@ -51,24 +51,24 @@ class SegmentedView: BaseView {
     // MARK: - Layout Helper
 
     override func setLayout() {
-        self.addSubviews(homeButton, rankButton, noticeButton)
+        self.addSubviews(TopicButton, AnswerButton, noticeButton)
         
-        homeButton.snp.makeConstraints {
+        TopicButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 6 / 812)
             $0.leading.equalToSuperview().offset(SizeLiterals.Screen.screenWidth * 16 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 29 / 812)
-            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 21 / 375)
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 42 / 375)
         }
         
-        rankButton.snp.makeConstraints {
-            $0.top.equalTo(homeButton.snp.top)
-            $0.leading.equalTo(homeButton.snp.trailing).offset(SizeLiterals.Screen.screenWidth * 17 / 375)
+        AnswerButton.snp.makeConstraints {
+            $0.top.equalTo(TopicButton.snp.top)
+            $0.leading.equalTo(TopicButton.snp.trailing).offset(SizeLiterals.Screen.screenWidth * 17 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 29 / 812)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 42 / 375)
         }
         
         noticeButton.snp.makeConstraints {
-            $0.top.equalTo(rankButton.snp.top).offset(SizeLiterals.Screen.screenHeight * 4 / 812)
+            $0.top.equalTo(AnswerButton.snp.top).offset(SizeLiterals.Screen.screenHeight * 4 / 812)
             $0.trailing.equalToSuperview().offset(-SizeLiterals.Screen.screenWidth * 14 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 20 / 812)
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 16 / 375)
@@ -80,42 +80,38 @@ class SegmentedView: BaseView {
     func updateButton(index: Int) {
         switch index {
         case 0:
-            homeButton.setTitleColor(.gray30, for: .normal)
-            rankButton.setTitleColor(.black000, for: .normal)
+            TopicButton.setTitleColor(.gray30, for: .normal)
+            AnswerButton.setTitleColor(.black000, for: .normal)
             selectedIndex = 1
         case 1:
-            homeButton.setTitleColor(.black000, for: .normal)
-            rankButton.setTitleColor(.gray30, for: .normal)
+            TopicButton.setTitleColor(.black000, for: .normal)
+            AnswerButton.setTitleColor(.gray30, for: .normal)
             selectedIndex = 0
         default:
             break
         }
     }
     
-    private func moveToRank() -> UIAction? {
+    private func moveToAnswer() -> UIAction? {
         let action = UIAction(handler: { [weak self] _ in
             guard let index = self?.selectedIndex else { return }
             
             if index == 1 {
                 return
             }
-            print("moveToRank")
-            print("\(index)")
             self?.updateButton(index: index)
             self?.delegate?.movePage(to: index)
         })
         return action
     }
     
-    private func moveToHome() -> UIAction? {
+    private func moveToTopic() -> UIAction? {
         let action = UIAction(handler: { [weak self] _ in
             guard let index = self?.selectedIndex else { return }
             
             if index == 0 {
                 return
             }
-            print("moveToHome")
-            print("\(index)")
             self?.updateButton(index: index)
             self?.delegate?.movePage(to: index)
         })
@@ -128,3 +124,4 @@ class SegmentedView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
