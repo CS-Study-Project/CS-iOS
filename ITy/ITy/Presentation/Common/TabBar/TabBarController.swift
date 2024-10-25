@@ -12,7 +12,7 @@ final class TabBarController: UITabBarController {
     // MARK: - Properties
     
     private let tabBarHeight: CGFloat = SizeLiterals.Screen.screenHeight * 74 / 812
-    private var tabs: [UIViewController] = []
+    private var tabsItem: [UIViewController] = []
     
     // MARK: - View Life Cycle
     
@@ -44,7 +44,7 @@ private extension TabBarController {
         let csVC = UINavigationController(rootViewController: ViewController())
         let myPageVC = UINavigationController(rootViewController: ViewController())
         
-        tabs = [
+        tabsItem = [
             teamVC,
             studyVC,
             homeVC,
@@ -54,11 +54,11 @@ private extension TabBarController {
         
         TabBarItemType.allCases.forEach {
             let tabBarItem = $0.setTabBarItem()
-            tabs[$0.rawValue].tabBarItem = tabBarItem
-            tabs[$0.rawValue].tabBarItem.tag = $0.rawValue
+            tabsItem[$0.rawValue].tabBarItem = tabBarItem
+            tabsItem[$0.rawValue].tabBarItem.tag = $0.rawValue
         }
         
-        setViewControllers(tabs, animated: false)
+        setViewControllers(tabsItem, animated: false)
 
     }
     
