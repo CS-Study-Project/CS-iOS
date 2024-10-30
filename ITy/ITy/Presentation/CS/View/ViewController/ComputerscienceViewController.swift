@@ -43,8 +43,10 @@ final class ComputerscienceViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPage()
+        setNotification()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+
     
     override func bindViewModel() {
         
@@ -84,6 +86,11 @@ final class ComputerscienceViewController: BaseViewController {
         segmentedView.delegate = self
     }
     
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     
     private func setPage() {
         if let firstViewController = viewControllers.first {
@@ -91,6 +98,31 @@ final class ComputerscienceViewController: BaseViewController {
             currentPage = firstViewController
         }
     }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+            
+            let desiredOffset: CGFloat = SizeLiterals.Screen.screenHeight * 250 / 812
+            
+            UIView.animate(withDuration: animationDuration) {
+                self.view.frame.origin.y = -desiredOffset
+            }
+        }
+    }
+
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        if let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+            UIView.animate(withDuration: animationDuration) {
+                self.view.frame.origin.y = 0
+            }
+        }
+    }
+
+    
+    
+    deinit {
+          NotificationCenter.default.removeObserver(self)
+      }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
