@@ -21,7 +21,7 @@ final class ComputerscienceTopicViewController: BaseViewController {
     // MARK: - UI Components
     
     private let topicView = ComputerscienceTopixView(frame: .zero, topixString: "메모리 누수")
-    private let anserView = TopicAnserView()
+    private let answerView = TopicAnswerView()
     
     
     // MARK: - Properties
@@ -47,7 +47,7 @@ final class ComputerscienceTopicViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews(topicView, anserView)
+        view.addSubviews(topicView, answerView)
         
         topicView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 39 / 812)
@@ -56,7 +56,7 @@ final class ComputerscienceTopicViewController: BaseViewController {
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 120 / 812)
         }
         
-        anserView.snp.makeConstraints {
+        answerView.snp.makeConstraints {
             $0.top.equalTo(topicView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 69 / 812)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 335 / 375)

@@ -1,5 +1,5 @@
 //
-//  TopixAnserView.swift
+//  TopixAnswerView.swift
 //  ITy
 //
 //  Created by 천성우 on 10/30/24.
@@ -10,12 +10,12 @@ import UIKit
 import Then
 import SnapKit
 
-class TopixAnserView: BaseView, UITextViewDelegate {
+class TopicAnswerView: BaseView, UITextViewDelegate {
     
     // MARK: - UI Components Property
     
     private let topLabel = UILabel()
-    private let anserTextView = UITextView()
+    private let answerTextView = UITextView()
     private let placeholderLabel = UILabel()
     private let shareButton = UIButton()
     
@@ -31,7 +31,7 @@ class TopixAnserView: BaseView, UITextViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setPlaceholder()
-        anserTextView.delegate = self
+        answerTextView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +48,7 @@ class TopixAnserView: BaseView, UITextViewDelegate {
             $0.textColor = .gray200
         }
         
-        anserTextView.do {
+        answerTextView.do {
             $0.font = .fontGuide(.body1_reg)
             $0.textColor = .black000
             $0.layer.cornerRadius = 15
@@ -69,14 +69,14 @@ class TopixAnserView: BaseView, UITextViewDelegate {
     // MARK: - Layout Helper
 
     override func setLayout() {
-        addSubviews(topLabel, anserTextView, shareButton)
+        addSubviews(topLabel, answerTextView, shareButton)
 
         topLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(16)
         }
         
-        anserTextView.snp.makeConstraints {
+        answerTextView.snp.makeConstraints {
             $0.top.equalTo(topLabel.snp.bottom).offset(13)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 313 / 375)
@@ -84,7 +84,7 @@ class TopixAnserView: BaseView, UITextViewDelegate {
         }
         
         shareButton.snp.makeConstraints {
-            $0.top.equalTo(anserTextView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 19 / 812)
+            $0.top.equalTo(answerTextView.snp.bottom).offset(SizeLiterals.Screen.screenHeight * 19 / 812)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 315 / 375)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 44 / 812)
@@ -94,7 +94,7 @@ class TopixAnserView: BaseView, UITextViewDelegate {
     // MARK: - Methods
 
     private func setPlaceholder() {
-        anserTextView.attributedText = NSAttributedString(
+        answerTextView.attributedText = NSAttributedString(
             string: placeholderText,
             attributes: [
                 .foregroundColor: placeholderColor,
@@ -104,10 +104,10 @@ class TopixAnserView: BaseView, UITextViewDelegate {
     }
     
     private func removePlaceholder() {
-        if anserTextView.attributedText.string == placeholderText {
-            anserTextView.text = ""
-            anserTextView.textColor = .black000
-            anserTextView.font = .fontGuide(.detail2_reg)
+        if answerTextView.attributedText.string == placeholderText {
+            answerTextView.text = ""
+            answerTextView.textColor = .black000
+            answerTextView.font = .fontGuide(.detail2_reg)
         }
     }
 
