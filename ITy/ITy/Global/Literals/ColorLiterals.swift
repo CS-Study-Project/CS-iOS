@@ -31,9 +31,10 @@ extension UIColor {
     
     // MARK: - Gray
     
-    static var gray50: UIColor {
-        return UIColor(hex: "#8B8B8D")
+    static var gray40: UIColor {
+        return UIColor(hex: "#EDEDED")
     }
+    
     
     static var gray100: UIColor {
         return UIColor(hex: "#8B8B8D")

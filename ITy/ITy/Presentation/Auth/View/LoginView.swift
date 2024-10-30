@@ -35,7 +35,7 @@ class LoginView: BaseView {
         
         continueButton.do {
             $0.setTitle("계속", for: .normal)
-            $0.setTitleColor(.gray50, for: .normal)
+            $0.setTitleColor(.gray100, for: .normal)
             $0.titleLabel?.font = .fontGuide(.head4)
             $0.layer.cornerRadius = 5
             $0.layer.borderWidth = 1
@@ -44,7 +44,7 @@ class LoginView: BaseView {
         
         signUpButton.do {
             $0.setTitle("회원가입", for: .normal)
-            $0.setTitleColor(.gray50, for: .normal)
+            $0.setTitleColor(.gray100, for: .normal)
             $0.titleLabel?.font = .fontGuide(.detail2_reg)
         }
 
