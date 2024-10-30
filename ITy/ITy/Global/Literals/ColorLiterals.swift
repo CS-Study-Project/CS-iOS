@@ -13,6 +13,9 @@ extension UIColor {
         return UIColor(hex: "#5085FF")
     }
     
+    static var blue200: UIColor {
+        return UIColor(hex: "#3A67F5")
+    }
     static var gray0: UIColor {
         return UIColor(hex: "#D9D9D9")
     }
@@ -35,6 +38,9 @@ extension UIColor {
         return UIColor(hex: "#EDEDED")
     }
     
+    static var gray50: UIColor {
+        return UIColor(hex: "#B5B5B5")
+    }
     
     static var gray100: UIColor {
         return UIColor(hex: "#8B8B8D")

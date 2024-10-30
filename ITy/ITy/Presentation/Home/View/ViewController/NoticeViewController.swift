@@ -27,6 +27,11 @@ final class NoticeViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     // MARK: - Properties
     
     override func bindViewModel() {

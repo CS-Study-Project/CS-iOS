@@ -24,7 +24,7 @@ class CustomNavigationView: BaseView {
         backgroundColor = .clear
         
         backButton.do {
-            $0.setImage(ImageLiterals.navigation.navigation_back, for: .normal)
+            $0.setImage(ImageLiterals.Navigation.navigation_back, for: .normal)
             $0.contentMode = .scaleAspectFit
         }
         

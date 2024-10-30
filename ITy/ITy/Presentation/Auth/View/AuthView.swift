@@ -41,12 +41,12 @@ class AuthView: BaseView {
         }
         
         kakaoLoginButton.do {
-            $0.setImage(ImageLiterals.auth.kakaoLogin_btn, for: .normal)
+            $0.setImage(ImageLiterals.Auth.kakaoLogin_btn, for: .normal)
             $0.layer.cornerRadius = 5
         }
         
         appleLoginButton.do {
-            $0.setImage(ImageLiterals.auth.appleLogin_btn, for: .normal)
+            $0.setImage(ImageLiterals.Auth.appleLogin_btn, for: .normal)
             $0.layer.cornerRadius = 5
         }
 
