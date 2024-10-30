@@ -20,6 +20,8 @@ final class ComputerscienceAnswerViewController: BaseViewController {
     
     // MARK: - UI Components
     
+    private let answerUI = AnswerView()
+    
     
     // MARK: - Properties
     
@@ -39,10 +41,19 @@ final class ComputerscienceAnswerViewController: BaseViewController {
     }
     
     override func setStyles() {
-        view.backgroundColor = .blue100
+        view.backgroundColor = .gray10
     }
     
-    override func setLayout() {}
+    override func setLayout() {
+        view.addSubviews(answerUI)
+        
+        answerUI.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(SizeLiterals.Screen.screenHeight * 39 / 812)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 337 / 375)
+            $0.height.equalTo(SizeLiterals.Screen.screenHeight * 250 / 812)
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
