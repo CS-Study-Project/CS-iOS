@@ -49,7 +49,12 @@ final class ComputerscienceViewController: BaseViewController {
 
     
     override func bindViewModel() {
-        
+        segmentedView.noticeButton.rx.tap
+            .bind { [weak self] in
+                guard let self else { return }
+                self.pushToNoticeViewController()
+            }
+            .disposed(by: disposeBag)
     }
     
     override func setStyles() {
@@ -116,6 +121,14 @@ final class ComputerscienceViewController: BaseViewController {
                 self.view.frame.origin.y = 0
             }
         }
+    }
+    
+    @objc
+    private func pushToNoticeViewController() {
+        let pushVC = NoticeViewController(viewModel: viewModel)
+        pushVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pushVC, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     
