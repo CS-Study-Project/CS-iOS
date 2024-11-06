@@ -20,4 +20,31 @@ enum ImageLiterals {
         static var myPage_on: UIImage { .load(name: "ic_myPage_on").withRenderingMode(.alwaysOriginal) }
         static var myPage_off: UIImage { .load(name: "ic_myPage_off").withRenderingMode(.alwaysOriginal) }
     }
+    
+    enum Home {
+        static var home_profile: UIImage { .load(name: "ic_profile").withRenderingMode(.alwaysOriginal) }
+        static var home_notice: UIImage { .load(name: "ic_notice").withRenderingMode(.alwaysOriginal) }
+    }
+    
+    enum Rank {
+        static var rank_firstPlace: UIImage { .load(name: "ic_firstPlace").withRenderingMode(.alwaysOriginal)}
+        static var rank_secondPlace: UIImage { .load(name: "ic_secondPlace").withRenderingMode(.alwaysOriginal)}
+        static var rank_thirdPlace: UIImage { .load(name: "ic_thirdPlace").withRenderingMode(.alwaysOriginal)}
+    }
+    
+    enum Auth {
+        static var kakaoLogin_btn: UIImage { .load(name: "btn_kakaologin").withRenderingMode(.alwaysOriginal)}
+        static var appleLogin_btn: UIImage { .load(name: "btn_applelogin").withRenderingMode(.alwaysOriginal)}
+    }
+    
+    enum Navigation {
+        static var navigation_back: UIImage { .load(name: "ic_navigation_back").withRenderingMode(.alwaysOriginal)}
+    }
+    
+    enum Comment {
+        static var hart_on_ic: UIImage { .load(name: "hart_on_ic").withRenderingMode(.alwaysOriginal)}
+        static var hart_off_ic: UIImage { .load(name: "hart_off_ic").withRenderingMode(.alwaysOriginal)}
+        static var comment_ic: UIImage { .load(name: "comment_ic").withRenderingMode(.alwaysOriginal)}
+        static var userImage_ic: UIImage { .load(name: "userImage_ic").withRenderingMode(.alwaysOriginal)}
+    }
 }

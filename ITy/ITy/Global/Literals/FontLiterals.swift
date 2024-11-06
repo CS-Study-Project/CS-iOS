@@ -13,6 +13,7 @@ enum AppleSDGothicNeo: String {
 }
 
 enum FontLevel {
+    case topic
     case head1
     case head2
     case head3
@@ -34,6 +35,8 @@ extension FontLevel {
     
     var fontWeight: String {
         switch self {
+        case .topic:
+            return AppleSDGothicNeo.bold.rawValue
         case .head1, .head2, .head3, .head4:
             return AppleSDGothicNeo.bold.rawValue
         case .body1_bold, .body2_bold, .body3_bold:
@@ -49,6 +52,8 @@ extension FontLevel {
     
     var fontSize: CGFloat {
         switch self {
+        case .topic:
+            return 40
         case .head1:
             return 24
         case .head2:

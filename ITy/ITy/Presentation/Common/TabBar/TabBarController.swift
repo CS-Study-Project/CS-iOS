@@ -12,13 +12,15 @@ final class TabBarController: UITabBarController {
     // MARK: - Properties
     
     private let tabBarHeight: CGFloat = SizeLiterals.Screen.screenHeight * 74 / 812
-    private var tabs: [UIViewController] = []
+    private var tabsItem: [UIViewController] = []
     
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
     }
 
     override func viewDidLoad() {
@@ -26,12 +28,8 @@ final class TabBarController: UITabBarController {
         setTabBarItems()
         setTabBarUI()
         setTabBarHeight()
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        tabBar.frame.size.height = self.tabBarHeight + getSafeAreaBottomHeight()
-//    }
 }
 
 private extension TabBarController {
@@ -40,11 +38,11 @@ private extension TabBarController {
         
         let teamVC = UINavigationController(rootViewController: ViewController())
         let studyVC = UINavigationController(rootViewController: ViewController())
-        let homeVC = UINavigationController(rootViewController: ViewController())
-        let csVC = UINavigationController(rootViewController: ViewController())
+        let homeVC = UINavigationController(rootViewController: MainViewController())
+        let csVC = UINavigationController(rootViewController: ComputerscienceViewController())
         let myPageVC = UINavigationController(rootViewController: ViewController())
         
-        tabs = [
+        tabsItem = [
             teamVC,
             studyVC,
             homeVC,
@@ -54,20 +52,19 @@ private extension TabBarController {
         
         TabBarItemType.allCases.forEach {
             let tabBarItem = $0.setTabBarItem()
-            tabs[$0.rawValue].tabBarItem = tabBarItem
-            tabs[$0.rawValue].tabBarItem.tag = $0.rawValue
+            tabsItem[$0.rawValue].tabBarItem = tabBarItem
+            tabsItem[$0.rawValue].tabBarItem.tag = $0.rawValue
         }
         
-        setViewControllers(tabs, animated: false)
+        setViewControllers(tabsItem, animated: false)
 
     }
     
     func setTabBarUI() {
         UITabBar.clearShadow()
-        tabBar.backgroundColor = UIColor.gray500
-        tabBar.tintColor = UIColor.white000
+        tabBar.backgroundColor = UIColor.white000
         tabBar.layer.masksToBounds = false
-        tabBar.layer.shadowColor = UIColor.diamon000.cgColor
+        tabBar.layer.shadowColor = UIColor.gray20.cgColor
         tabBar.layer.shadowOpacity = 1
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         tabBar.layer.shadowRadius = 1

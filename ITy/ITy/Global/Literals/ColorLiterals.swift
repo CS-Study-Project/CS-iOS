@@ -9,10 +9,37 @@ import UIKit
 
 extension UIColor {
     
+    static var blue100: UIColor {
+        return UIColor(hex: "#5085FF")
+    }
+    
+    static var blue200: UIColor {
+        return UIColor(hex: "#3A67F5")
+    }
+    static var gray0: UIColor {
+        return UIColor(hex: "#D9D9D9")
+    }
+    
+    static var gray10: UIColor {
+        return UIColor(hex: "#F8F9FA")
+    }
+    
+    static var gray20: UIColor {
+        return UIColor(hex: "#EAECF0")
+    }
+    
+    static var gray30: UIColor {
+        return UIColor(hex: "#ABADB2")
+    }
+    
     // MARK: - Gray
     
+    static var gray40: UIColor {
+        return UIColor(hex: "#EDEDED")
+    }
+    
     static var gray50: UIColor {
-        return UIColor(hex: "8B8B8D")
+        return UIColor(hex: "#B5B5B5")
     }
     
     static var gray100: UIColor {
